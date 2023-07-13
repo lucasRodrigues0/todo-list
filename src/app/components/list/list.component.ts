@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./list.component.less']
 })
 export class ListComponent {
-  public list: String[] = ['Tomar banho', 'jogar cs', 'treinar', 'falar com as gatinhas', 'dormir'];
+  public list: String[] = ['Tomar banho', 'jogar cs', 'treinar', 'falar com as gatinhas', 'dormir', 'vagabundear', 'curtir o mar'];
 }

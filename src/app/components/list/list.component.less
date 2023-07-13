@@ -2,18 +2,61 @@
 
 .task-list {
     width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .item {
     background-color: @list-item-background-gray;
-    border-radius: 15px;
+    border-radius: 10px;
     color: @text-gray-dark;
+    display: flex;
     font-family: @font;
-    font-size: 40px;
+    font-size: 25px;
     margin-bottom: 10px;
     padding-left: 10px;
+    display: block;
+    width: 70%;
 }
 
 .item:last-child {
     margin-bottom: 0;
+}
+
+.clear-button {
+    background-color: @button-background-gray;
+    border: none;
+    border-radius: 10px;
+    color: @text-gray-light;
+    display: block;
+    font-family: @font;
+    font-size: 30px;
+    margin-bottom: 1rem;
+    padding: 10px 0 10px 0;
+    min-width: 40%;
+}
+
+.clear-button:hover {
+    background-color: @text-gray-dark;
+}
+
+.input {
+    background-color: @input-gray;
+    border: none;
+    border-radius: 10px;
+    color: @text-gray;
+    font-family: @font;
+    font-size: 20px;
+    //margin: 0.5rem auto 1rem auto;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 10px 5px 10px 5px;
+    width: 40%;
+}
+
+.input::placeholder {
+    color: @text-gray;
+    font-family: @font;
+    font-size: 20px;
 }
