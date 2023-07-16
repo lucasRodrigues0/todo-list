@@ -1,10 +1,10 @@
 <section class="task-list">
 
-    <input type="text" placeholder="Digite a tarefa" class="input">
+    <input type="text" placeholder="Digite a tarefa" class="input" [(ngModel)]="tarefa" (keydown.enter)="incluirTarefa()">
 
     <div *ngFor="let item of list" class="item">
         <span>
-            <span class="material-icons">delete</span>
+            <span class="material-icons" (click)="deletarTarefa(item)">delete</span>
         </span>
         <span>
             <span>
@@ -15,6 +15,6 @@
         
     </div>
 
-    <button class="clear-button">Limpar lista</button>
+    <button class="clear-button" (click)="limparLista()">Limpar lista</button>
 
 </section>
