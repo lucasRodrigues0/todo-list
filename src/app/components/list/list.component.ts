@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 
+interface Item {
+  nome: string;
+  checked: boolean;
+}
+
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -7,12 +13,14 @@ import { Component } from '@angular/core';
 })
 export class ListComponent {
 
-  public list: String[] = [];
+  public list: Item[] = [];
 
-  public tarefa: String = '';
+  public tarefa = '';
+
+  public tracionado: Boolean = false;
 
   public incluirTarefa() {
-    if(this.tarefa !== '') this.list.push(this.tarefa);
+    if(this.tarefa !== '') this.list.push({nome: this.tarefa, checked: false});
     this.tarefa = '';
   }
 
@@ -20,7 +28,7 @@ export class ListComponent {
     this.list = [];
   }
 
-  public deletarTarefa(item: String) {
+  public deletarTarefa(item: Item) {
     this.list.splice(this.list.indexOf(item), 1);
   }
 
