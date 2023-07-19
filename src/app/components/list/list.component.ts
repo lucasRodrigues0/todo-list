@@ -19,8 +19,8 @@ export class ListComponent {
 
   public tracionado: Boolean = false;
 
-  public incluirTarefa() {
-    if(this.tarefa !== '') this.list.push({nome: this.tarefa, checked: false});
+  public incluirTarefa(item: Item) {
+    if(item.nome !== '') this.list.push(item);
     this.tarefa = '';
   }
 
@@ -30,6 +30,14 @@ export class ListComponent {
 
   public deletarTarefa(item: Item) {
     this.list.splice(this.list.indexOf(item), 1);
+  }
+
+  public onCheckboxChange(item: Item): void {
+    item.checked = !item.checked;
+    if(item.checked) {
+      this.deletarTarefa(item);
+      this.incluirTarefa(item);
+    }
   }
 
 }

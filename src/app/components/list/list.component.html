@@ -1,6 +1,6 @@
 <section class="task-list">
 
-    <input type="text" placeholder="Digite a tarefa" class="input" [(ngModel)]="tarefa" (keydown.enter)="incluirTarefa()">
+    <input type="text" placeholder="Digite a tarefa" class="input" [(ngModel)]="tarefa" (keydown.enter)="incluirTarefa({nome: this.tarefa, checked: false})">
 
     <div *ngFor="let item of list" class="item">
         <span>
@@ -8,9 +8,9 @@
         </span>
         <span>
             <span>
-                <input type="checkbox" name="" id="" [checked]="">
+                <input type="checkbox" name="" id="" (change)="onCheckboxChange(item)" [checked]="item.checked">
             </span>
-            {{ item.nome }}
+            <span [ngClass]="{'checked': item.checked}">{{ item.nome }}</span>
         </span>
         
     </div>
