@@ -1,6 +1,7 @@
 {
   "name": "todo-list",
   "version": "1.0.0",
+  "homepage": "https://lucasrodrigues0.github.io/todo-list/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
