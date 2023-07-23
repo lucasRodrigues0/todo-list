@@ -17,8 +17,6 @@ export class ListComponent {
 
   public tarefa = '';
 
-  public tracionado: Boolean = false;
-
   public incluirTarefa(item: Item) {
     if(item.nome !== '') this.list.push(item);
     this.tarefa = '';
